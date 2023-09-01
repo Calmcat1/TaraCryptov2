@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <link rel="stylesheet" href="{% static '/crypto/CSS/pages.css' %}">
+  </head>
+
+  <body>
+    <div class="maincontainer">
+       <!--navbar for the website-->
+       <div class="navbar">
+         <div class="logo">
+           <h3>TaraCrypto</h3>
+         </div>
+       </div>
+
+       <!--content generated via the DB-->
+      <div class="content">
+          <h1>New blogs!!!</h1>
+          {% for query in queries %}
+            <div class="blogContent">
+              <img src = "{% get_static_prefix %}{{ query.imgDesc }}">
+                <div class="blogTextCont">
+                  <h2>{{query.blogHeading}}</h2>
+                  <p>{{query.summaryDesc}}</p>
+                  <a>by: {{query.blogAuthor}}</a>
+                </div>
+            </div>  
+          {% endfor %}
+      </div>
+
+
+      <!--footer bar for the site-->
+      <div class="footer">
+        <div class="section-logos">
+          <h3>TaraCrypto</h3>
+
+        
+          <div class="section-links-1">
+            <h3>Beginner Blogs</h3>
+            <ul>
+              <li><a>Introduction to Crypto!</a></li>
+              <li><a>What is bitcoin</a></li>
+              <li><a>The power of Ether</a></li>
+              <li><a>All about exchanges</a></li>
+            </ul>
+          </div>
+
+          <div class="section-links-2">
+            <h3>Other Links</h3>
+            <ul>
+              <li><a>PnL calc</a></li>
+              <li><a>LinkTest</a></li>
+              <li><a>LinkTest</a></li>
+              <li><a>LinkTest</a></li>
+            </ul>
+          </div>
+
+          <div class="section-links-3">
+            <h3>Exchanges/Affliate</h3>
+            <ul>
+              <li><a>Binance exchange</a></li>
+              <li><a>Bybit</a></li>
+              <li><a>Kraken</a></li>
+            </ul>
+          </div>
+      </div>
+
+    </div>
+  </body>
+
+</html>

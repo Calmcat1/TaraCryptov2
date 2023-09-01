@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="maincontainer">
+
+
+
+    <!--generates a list for the webpage-->
+    <div class="content">
+      {% for heading in headings %}
+        <h1>{{heading}}</h1>
+          <ul>
+          {% for listItem in listItems %}
+              {% for listPoint in listItem %}
+            <li>{{listPoint}}</li>
+            {% endfor %}
+          {% endfor %}
+        </ul>
+      {% endfor %}
+    </div>
+  </div>
+
+
+  
+  
+</body>
+</html>
